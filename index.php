@@ -8,7 +8,8 @@
         <title>Course Review</title>
     </head>
     <body>
-
+        <?php include 'inc/header.php'; ?>
+        <?php include 'config/db.php'; ?>
 
         <main>
             <div class="container d-flex flex-column align-items-center">
@@ -40,7 +41,7 @@
         </main>
 
 
-        <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
 
+        <?php include 'inc/footer.php'; ?>
     </body>
 </html>

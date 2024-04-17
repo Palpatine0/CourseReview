@@ -9,7 +9,8 @@
     </head>
     <body>
 
-
+        <?php include 'inc/header.php'; ?>
+        <?php include 'config/db.php'; ?>
         <main>
             <div class="container d-flex flex-column align-items-center">
                 <h2>About Us</h2>
@@ -19,6 +20,6 @@
         </main>
 
         <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
-
+        <?php include 'inc/footer.php'; ?>
     </body>
 </html>
