@@ -84,5 +84,18 @@
 
 
         <?php include 'inc/footer.php'; ?>
+        <?php
+        if (empty($nameErr) && empty($emailErr) && empty($courseNameErr) && empty($contentErr)) {
+            $sql = "INSERT INTO review (name, email, course_name, content) VALUES('$name', '$email', '$courseName', '$content')";
+
+            if (mysqli_query($conn, $sql)) {
+                // 成功
+                header('Location: reviews.php');
+            } else {
+                // 错误
+                echo "Error: " . mysqli_error($conn);
+            }
+        }
+        ?>
     </body>
 </html>
