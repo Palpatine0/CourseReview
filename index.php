@@ -43,6 +43,12 @@
                     }
                     echo $nameErr;
                     echo $name;
+                    echo $email;
+                    echo $emailErr;
+                    echo $courseName;
+                    echo $courseNameErr;
+                    echo $content;
+                    echo $contentErr;
                 }
                 ?>
                 <img src="/course-review-app/img/logo.png" class="w-25 mb-3" alt="">
