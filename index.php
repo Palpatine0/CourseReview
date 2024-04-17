@@ -25,9 +25,30 @@
                         $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                     }
 
+                    if (empty($_POST['email'])) {
+                        $emailErr = "Enter your email!";
+                    } else {
+                        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                    }
+                    if (empty($_POST['course'])) {
+                        $courseNameErr = "Enter the course name!";
+                    } else {
+                        $courseName = filter_input(INPUT_POST, 'course', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                    }
 
+                    if (empty($_POST['body'])) {
+                        $contentErr = "Enter the review content!";
+                    } else {
+                        $content = filter_input(INPUT_POST, 'body', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                    }
                     echo $nameErr;
                     echo $name;
+                    echo $email;
+                    echo $emailErr;
+                    echo $courseName;
+                    echo $courseNameErr;
+                    echo $content;
+                    echo $contentErr;
                 }
                 ?>
                 <img src="/course-review-app/img/logo.png" class="w-25 mb-3" alt="">
@@ -36,21 +57,21 @@
                 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post" class="mt-4 w-75">
                     <div class="mb-3">
                         <label for="name" class="form-label">Your Name</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                        <input type="text" class="form-control <?php echo $nameErr ? 'is-invalid' : null; ?>" id="name" name="name" placeholder="Enter your name">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Your Email</label>
-                        <input type="email" class="form-control " id="email" name="email" placeholder="Enter your email">
+                        <input type="email" class="form-control <?php echo $emailErr ? 'is-invalid' : null; ?>" id="email" name="email" placeholder="Enter your email">
                     </div>
 
                     <div class="mb-3">
                         <label for="course" class="form-label">Course Name</label>
-                        <input type="text" class="form-control " id="course" name="course" placeholder="Enter course name">
+                        <input type="text" class="form-control <?php echo $courseNameErr ? 'is-invalid' : null; ?>" id="course" name="course" placeholder="Enter course name">
                     </div>
                     <div class="mb-3">
 
                         <label for="body" class="form-label">Review Content</label>
-                        <textarea class="form-control " id="body" name="body" rows="4" placeholder="Enter your review"></textarea>
+                        <textarea class="form-control <?php echo $contentErr ? 'is-invalid' : null; ?>" id="body" name="body" rows="4" placeholder="Enter your review"></textarea>
                     </div>
 
 
